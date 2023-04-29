@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+  
+<html>
+<head>
+    <title>For History in Homographer</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/production.css') }}">
+</head>
+<body>
+<p class="container pt3 mt2 text--gray align--center"><b>Ambiguous Meaning</b></p>
+<ol class="container pt3 mt2 text--gray align--center">
+<!-- For loop logic of jinja template -->
+{%for i in range(0, len4)%}
+    <li style="border-style: double;">{{result[i]}}</li>
+{%endfor%}
+</ol>
+<p class="container pt3 mt2 text--gray align--center"><b>Word Meaning</b></p>
+<ol class="container pt3 mt2 text--gray align--center">
+<!-- For loop logic of jinja template -->
+{%for i in range(0, len1)%}
+    <li style="border-style: double;">{{wordmeanings[i]}}</li>
+{%endfor%}
+</ol>
+
+<p class="container pt3 mt2 text--gray align--center"><b>Synonyms</b></p>
+<ol class="container pt3 mt2 text--gray align--center">
+<!-- For loop logic of jinja template -->
+{%for i in range(0, len2)%}
+    <li style="border-style: double;">{{synonyms[i]}}</li>
+{%endfor%}
+</ol>
+
+<p class="container pt3 mt2 text--gray align--center"><b>Antonyms</b></p>
+<ol class="container pt3 mt2 text--gray align--center">
+<!-- For loop logic of jinja template -->
+{%for i in range(0, len3)%}
+    <li style="border-style: double;">{{antonyms[i]}}</li>
+{%endfor%}
+</ol>
+  
+</body>
+</html>

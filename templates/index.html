@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>Homographer</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/production.css') }}">
+
+    <!-- Web fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700|Source+Serif+Pro:700" rel="stylesheet">
+
+    <!-- favicon.ico. Place these in the root directory. -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+</head>
+
+<body class="has-animations">
+
+
+    <!-- Header -->
+    <header class="align--center pt3">
+        <div class="container--lg border--bottom pb3">
+            <img class="logo mb3 reveal-on-scroll is-revealing" src="/static/img/logo.svg" alt="Carta">
+            <h1 class="mb2">A new way to translate languages</h1>
+            <span>
+
+            </span>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Feature list -->
+        <div class="container pt3 mt2 text--gray align--center">
+            <p class="mb3">Great for all the indo-arian languages like Bangla,Hindi....</p>
+            <div class="grid-row">
+                <div class="grid-column span-one-third mb3 reveal-on-scroll is-revealing">
+                    <img class="illustration--small mb1" src="/static/img/text.svg" alt="Assign to others">
+                    <p><b><a href="#translator">Translator</a></b></p>
+                </div>
+                <div class="grid-column span-one-third mb3 reveal-on-scroll is-revealing">
+                    <img class="illustration--small mb1" src="/static/img/data.svg" alt="Stay connected">
+                    <p><b><a href="history">History</a></b></p>
+                </div>
+                <div class="grid-column span-one-third mb3 reveal-on-scroll is-revealing">
+                    <img class="illustration--small mb1" src="/static/img/search.svg" alt="Powerful search">
+                    <p><b>search</b></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Focus -->
+        <div class="container--lg pt1 pb1">
+
+            <div class="grid-row grid-row--center">
+                <div class="grid-column mt3 mb2 order-2">
+                    <div class="border--bottom pb2 mb2">
+                        <h2>User History</h2>
+                        <p>BackUp what you have searched in the past!</p>
+                    </div>
+                    <p class="italic text--gray mb1">Just click the History option above to explore</p>
+                </div>
+                <div class="grid-column span-1"></div>
+                <div class="grid-column mt3 mb2 order-1 reveal-on-scroll is-revealing">
+                    <img src="/static/img/vault.svg" alt="Usage data">
+                </div>
+            </div>
+
+            <div class="grid-row grid-row--center">
+                <div class="grid-column mt3 mb2 reveal-on-scroll is-revealing">
+                    <img src="/static/img/security.svg" alt="Absolute security">
+                </div>
+                <div class="grid-column span-1"></div>
+                <div class="grid-column mt3 mb2">
+                    <div class="border--bottom pb2 mb2">
+                        <h2 id="test">Absolute security</h2>
+                        <p>By using google firebase backing up your data and securing your account is more easy.</p>
+                    </div>
+                    <p class="italic text--gray mb1">Account security provided by Google Firebase</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mentioned -->
+
+        <!-- CTA -->
+        <div class="bg--dark-gray align--center pt3 pb3" id="translator">
+            <div class="container pt2 pb2">
+                <img class="cta-image mb2 reveal-on-scroll is-revealing" src="/static/img/assign.svg"
+                    alt="Text the app">
+                <p class="h3 text--white mb1 bold">indo-arian language Translator</p>
+                <p class="text--white mb3">Just insert your line and see the magic.</p>
+                <div class="inline-block mr1 no-mr-on-mobile" style="width: 400px;margin: 20px;max-width:100%">
+                    <textarea class="form-control" id="input" name="story" rows="5" cols="10">Enter text to translate</textarea>
+                    <label class="text--white mb3">language</label>
+                    <select name="language" id="language" class="bold">
+                        <option value="en_XX">English</option>
+                        <option value="ne_NP">Nepali</option>
+                        <option value="ur_PK">Urdu</option>
+                        <option value="hi_IN">Hindi</option>
+                        <option value="bn_IN" selected>Bangla</option>
+                        <option value="ta_IN">Tamil</option>
+                        <option value="te_IN">Telegu</option>
+                        <option value="mr_IN">Marathi</option>
+                    </select>
+                </div>
+                <div title="this is a hover over" class="inline-block mr1 no-mr-on-mobile"
+                    style="width: 400px;margin: 20px;max-width:100%;">
+                    <textarea class="form-control" id="output" name="story" rows="5" cols="10" readonly></textarea>
+                    <label class="text--white mb3">Translated language</label>
+                    <select name="TLanguage" id="TLanguage" class="bold">
+                        <option value="en_XX" selected>English</option>
+                        <option value="ne_NP">Nepali</option>
+                        <option value="ur_PK">Urdu</option>
+                        <option value="hi_IN">Hindi</option>
+                        <option value="bn_IN">Bangla</option>
+                        <option value="ta_IN">Tamil</option>
+                        <option value="te_IN">Telegu</option>
+                        <option value="mr_IN">Marathi</option>
+                    </select>
+                </div>
+                <button class="btn btn--secondary" id="fun" onclick="server.checkHomograph()"
+                    type="button">Translate</button>
+                <button class="btn btn--secondary" id="fun"
+                    type="button"><a href="meanings">Meaning/sym/antm</a></button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+    <!-- The compiled JavaScript file -->
+    <script src="{{url_for('static', filename='js/production.js')}}"></script>
+
+</body>
+
+</html>

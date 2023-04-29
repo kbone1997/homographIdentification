@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+  
+<html>
+<head>
+    <title>For History in Homographer</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/production.css') }}">
+</head>
+<body>
+  
+<ol class="container pt3 mt2 text--gray align--center">
+    <p><b style="font-size: larger;">History</b></p>
+<!-- For loop logic of jinja template -->
+{%for i in range(0, len)%}
+    <li style="border-style: double; border-radius: 5px; margin-bottom: 10px;">{{historyLines[i]}}</li>
+{%endfor%}
+  
+</ol>
+  
+</body>
+</html>

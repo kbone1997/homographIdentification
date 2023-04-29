@@ -1,0 +1,6 @@
+Im-------------->n/a
+going-------------->['stay_in_place', 'come', 'malfunction', 'be_born', 'stop']
+to-------------->n/a
+eat-------------->n/a
+Do-------------->['unmake']
+this-------------->n/a

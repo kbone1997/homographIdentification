@@ -1,0 +1,30 @@
+
+<html lang="en">
+<head>
+    <meta name="viewport" content= "width-device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Login/Signup</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+
+</head>
+<body>
+<div class="login-page">
+    <div class="form">
+        <h1 style="font-family: 'Poppins SemiBold'; color: #474488; text-align:center"> SIGN UP </h1>
+        <form class="register-form">
+        <input type="text" placeholder="fullName" id="fullName">
+        <input type="text" placeholder="Email" id="email">
+        <input type="text" placeholder="Phone Number" id="phoneNumber">
+        <input type="password" placeholder="Password" id="password">
+
+        <input id="logSubButton" placeholder="SUBMIT">
+
+        </form>
+    
+        <p style="font-family: 'Poppins Medium'; font-size: 13px; color: #474488">Already Signed Up? <a href="login"> Login </a></p>
+    </div>
+</div>
+
+</body>
+<script type="module" src="./authScript.js"></script>
+</html>
